@@ -4,15 +4,148 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/titulo"
+        android:layout_width="409dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="468dp"
+        android:background="#FF5722"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="15dp"
+        android:text="Calculadora de Gorjeta projeto"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textTotal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.074" />
+
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/textPorcentagem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/titulo"
+        app:srcCompat="@drawable/gorjeta" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editValor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite um valor ex.: 35.50"
+            android:inputType="number|numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <SeekBar
+        android:id="@+id/seekBarGorjeta"
+        android:layout_width="282dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:max="100"
+        app:layout_constraintBottom_toBottomOf="@+id/textPorcentagem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textPorcentagem"
+        app:layout_constraintTop_toTopOf="@+id/textPorcentagem" />
+
+    <TextView
+        android:id="@+id/textPorcentagem"
+        android:layout_width="73dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="26dp"
+        android:text="0%"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/seekBarGorjeta"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="77dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="27dp"
+        android:text="Gorjeta"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPorcentagem" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="58dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="118dp"
+        android:text="Total"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textTotal"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textGorjeta"
+        android:layout_width="263dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
+        android:background="#FF5722"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="15dp"
+        android:text="0.0"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarGorjeta" />
+
+    <TextView
+        android:id="@+id/textTotal"
+        android:layout_width="262dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="116dp"
+        android:background="#FF5722"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="15dp"
+        android:text="0.0"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
